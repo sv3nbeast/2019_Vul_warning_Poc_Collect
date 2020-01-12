@@ -1,0 +1,27 @@
+* Update doc/ChangeLog
+
+* Update version in configure.ac and rdesktop.spec
+
+* Create a tarball: "make dist". Verify that it contains only relevant files
+
+* Test build the tarball on a few systems. Test "rpmbuild -ta" as well
+
+* Tag release:
+
+    git checkout master
+    git tag -a vx.y.z
+    git push --tags
+
+
+* Edit release tag on GitHub
+
+  - Add ChangeLog for release
+
+  - Upload tarball for release tag on GitHub
+
+
+* Update web page
+
+* Send announcement to the mailing list
+
+* Append "post" to VERSION

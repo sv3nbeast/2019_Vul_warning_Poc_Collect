@@ -1,0 +1,18 @@
+# Below rules use the LUA scripting engine to detect the VxWorks exploitation attempts
+alert ip any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12258 SYN Observed"; flow:to_server; luajit:cve_2019_12258.lua; threshold:type limit, track by_src, count 1, seconds 3600; classtype:bad-unknown; reference:url, armis.com/urgent11/; reference:url, github.com/ArmisSecurity/urgent11-detector; metadata:created_at 2019-11-05; metadata:cve, 2019-12258; sid:1; rev:1;)
+
+alert ip any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12255 Integer Underflow Observed"; flow:to_server; flags:PUA; dsize:>1500;  luajit:cve_2019_12255.lua; threshold:type limit, track by_src, count 1, seconds 3600; classtype:bad-unknown; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-05; metadata:cve, 2019-12255; sid:2; rev:1;)
+
+alert ip any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12260 Malformed TCP-AO Detected"; flow:to_server; flags:S; luajit:cve_2019_12260.lua; threshold:type limit, track by_src, count 1, seconds 3600; classtype:bad-unknown; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-06; metadata:cve, 2019-12260; sid:3; rev:1;)
+
+alert ip any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12256 Double Invalid LSRR Options Observed"; flow:to_server; luajit:cve_2019_12256_lsrr.lua; threshold:type limit, track by_src, count 1, seconds 3600; classtype:bad-unknown; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-12; metadata:cve, 2019-12256; sid:4; rev:1;)
+
+alert ip any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12256 Double Invalid SSRR Options Observed"; flow:to_server; luajit:cve_2019_12256_ssrr.lua; threshold:type limit, track by_src, count 1, seconds 3600; classtype:attempted-admin; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-12; metadata:cve, 2019-12256; sid:5; rev:1;)
+
+# Below rules use the Suricata 5.0.1 tcp.hdr keyword to match on VxWorks exploitation attempts
+alert tcp any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12260 Malformed TCP-AO Detected"; flow:to_server; flags:S; tcp.hdr; content:"|1d|"; offset:20; depth:1; byte_test:1,<,4,0,relative; threshold:type limit, track by_src, count 1, seconds 3600; classtype:attempted-admin; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-28; metadata:cve, 2019-12260; rev:1; sid:6;)
+
+alert tcp any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12255 Integer Underflow Observed"; flow:to_server; flags:PUA; dsize:>1500; tcp.hdr; content:"|00 00|"; offset:18; depth:2; threshold:type limit, track by_src, count 1, seconds 3600; classtype:attempted-admin; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-18; metadata:cve, 2019-12255; rev:1; sid:7;)
+
+alert tcp any any -> $HOME_NET any (msg:"EXPLOIT - VxWorks CVE-2019-12258 Malformed SYN Observed"; flow:to_server; flags:S; tcp.hdr; content:"|03|"; offset:25; depth:1; byte_test:1,<,3,0,relative; threshold:type limit, track by_src, count 1, seconds 3600; classtype:attempted-admin; reference:url, armis.com/urgent11/; metadata:created_at 2019-11-28; metadata:cve, 2019-12258; rev:1; sid:8;)
+

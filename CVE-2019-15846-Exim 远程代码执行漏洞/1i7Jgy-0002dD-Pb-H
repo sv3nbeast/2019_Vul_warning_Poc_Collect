@@ -1,0 +1,29 @@
+1i7Jgy-0002dD-Pb-H
+Debian-exim 103 114
+<exim@synacktiv.com>
+1568035612 0
+-received_time_usec .793865
+-helo_name test
+-host_address 127.0.0.1.55748
+-host_name localhost
+-interface_address 127.0.0.1.25
+-received_protocol esmtps
+-body_linecount 3
+-max_received_linelength 25
+-tls_cipher TLSv1.3:TLS_AES_256_GCM_SHA384:256
+-tls_sni abcdef\
+-tls_ourcert -----BEGIN CERTIFICATE-----\nMIICoTCCAYkCFB9pKlofgtm4YdZqmpAaIz42yNqeMA0GCSqGSIb3DQEBCwUAMA0x\nCzAJBgNVBAYTAlVTMB4XDTE5MDkwODE0MTY0M1oXDTIyMDkwNzE0MTY0M1owDTEL\nMAkGA1UEBhMCVVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDM5+zK\nYgwwjX/4CMtHI1TZd99Jmiu42785IG0n6APdVWAZ8wKe+h3GEdT2RWgDWJWv/W/i\nTKYFtIMZbZmGaVpA43plWUL0CZ5tta8N88n5vx4Ylo1Ca5kf5tHg3K/mAGfY4w9z\n4RYbGepWS3I3s39aHQBDIrrxRdmdx/uJeD9hRyMmHjyMnK6Gds90KnuWu0yB3Yhk\nsV9uWW/eyHAo2bc0i3ubEVks6LkfL+Csg+x4sPcJIoeMoyIiovlxIgP5i7sTuFTL\ni8XgiRIGkDSHwanI2xOFi5F8yoLPcG2dOhWhHVa6h5KWve0KvNMlA0ZeQ987wpGe\n5aDuQ+4+Qskp2yptAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJRtTVMtSYqccO6Z\nnISpK1eHeqS7M3ON/iKhbUOvuiezBL818Zf9kx75Y+ql+f1WuSsndFsLRSNQoNjD\npe7w0f1trn49Xr1Hr8sorikWNb9ao45iLb1WvrSahXLwCeldfXV97kPnNESn3QJy\nFSUo8ApZ8LBum8DNd68pW8fKb8eS8ETcR8O3UcI7cUb1Lf+gXSNLhKYlNjzpWsXt\n6hv3LrD8225kds0zVpR9fXdwv+YgNsPJguLBOuSTQqQnC/mXGDGK7NZKvkJN5WgW\nUqRIGuNlLbL22epPGI+rcUX5nctbDQZIX6sAq2eiQtrijdTrgT4HlVMAO88FTzQK\nvidd7Hg=\n-----END CERTIFICATE-----\n
+XX
+1
+exim@synacktiv.com
+
+239P Received: from localhost ([127.0.0.1]:55748 helo=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb)
+	by artevelde with esmtps (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <exim@synacktiv.com>)
+	id 1i7Jgy-0002dD-Pb
+	for exim@synacktiv.com; Mon, 09 Sep 2019 15:26:52 +0200
+026  Subject: My dear friends,
+042I Message-Id: <E1i7Jgy-0002dD-Pb@synacktiv.com>
+022F From: exim@synacktiv.com
+038  Date: Mon, 09 Sep 2019 15:26:52 +0200
